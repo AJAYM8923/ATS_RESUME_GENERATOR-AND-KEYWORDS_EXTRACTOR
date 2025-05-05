@@ -1,0 +1,283 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ATS Resume Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            color: #1f2937;
+            background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), url('https://images.unsplash.com/photo-1498050108023-c5249f4df085') no-repeat center center/cover;
+            background-attachment: fixed;
+            animation: fadeInBody 1s ease-in-out;
+        }
+
+        @keyframes fadeInBody {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        header {
+            background: rgba(15, 23, 42, 0.95);
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 1.6rem;
+            display: flex;
+            align-items: center;
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        header img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        nav a {
+            color: #cbd5e1;
+            margin-left: 20px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s, transform 0.2s;
+        }
+
+        nav a:hover {
+            color: #60a5fa;
+            transform: scale(1.1);
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 18px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+            animation: fadeInMain 1s ease-in-out;
+        }
+
+        @keyframes fadeInMain {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            color: #1d4ed8;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+        }
+
+        label {
+            font-weight: 600;
+            margin-top: 10px;
+            display: block;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 14px;
+            margin-top: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 1rem;
+            background-color: #f9fafb;
+            transition: border-color 0.3s;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #2563eb;
+            outline: none;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        button {
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #1e40af;
+            transform: scale(1.05);
+        }
+
+        .keywords-section {
+            background: #f1f5f9;
+            padding: 30px;
+            border-radius: 14px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.07);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #333;
+            margin-top: 60px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav {
+                margin-top: 10px;
+            }
+
+            header h1 {
+                font-size: 1.3rem;
+            }
+
+            main {
+                margin: 30px 15px;
+                padding: 25px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1><img src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png" alt="Logo"> ATS Resume Generator</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Resume Generator Section -->
+        <section class="resume-section">
+            <form action="/generate" method="POST">
+                <h2>Generate ATS-Friendly Resume</h2>
+
+                <label for="name">Full Name</label>
+                <input type="text" name="name" id="name" required />
+
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required />
+
+                <label for="phone">Phone Number</label>
+                <input type="text" name="phone" id="phone" required />
+
+                <label for="linkedin">LinkedIn Profile URL</label>
+                <input type="text" name="linkedin" id="linkedin" />
+
+                <label for="github">GitHub Profile URL</label>
+                <input type="text" name="github" id="github" />
+
+                <label for="address">Address</label>
+                <textarea name="address" id="address"></textarea>
+
+                <label for="summary">Professional Summary</label>
+                <textarea name="summary" id="summary"></textarea>
+
+                <label for="skills">Skills (comma-separated)</label>
+                <textarea name="skills" id="skills"></textarea>
+
+                <label for="experience">Work Experience</label>
+                <textarea name="experience" id="experience"></textarea>
+
+                <label for="education">Education Details</label>
+                <textarea name="education" id="education"></textarea>
+
+                <label for="certifications">Certifications</label>
+                <textarea name="certifications" id="certifications"></textarea>
+
+                <!-- 🔽 New Project Field -->
+                <label for="projects">Project Details</label>
+                <textarea name="projects" id="projects"></textarea>
+
+                <label for="job_description">Paste Job Description Here</label>
+                <textarea name="job_description" id="job_description" required></textarea>
+
+                <button type="submit">Generate Resume</button>
+            </form>
+        </section>
+
+        <!-- Keyword Extractor Section -->
+        <section class="keywords-section">
+            <form action="/keywords" method="POST">
+                <h2>Keyword Extractor</h2>
+                <p style="margin-bottom: 15px;">Paste the job description to get key skills and phrases to enhance your
+                    resume.</p>
+
+                <label for="keywords_description">Job Description</label>
+                <textarea name="job_description" id="keywords_description" required></textarea>
+
+                <button type="submit">Extract Keywords</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        Developed by Ajay M | Contact: Ajaymeledath11@gmail.com
+    </footer>
+</body>
+
+</html>

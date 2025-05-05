@@ -1,0 +1,6 @@
+Flask
+spacy
+scikit-learn
+xhtml2pdf
+
+

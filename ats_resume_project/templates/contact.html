@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)),
+                url('https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+            background-attachment: fixed;
+            color: #1f2937;
+        }
+
+        header {
+            background-color: rgba(30, 41, 59, 0.9);
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #60a5fa;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px 35px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .contact-card h2 {
+            margin-top: 0;
+            font-size: 1.4rem;
+            color: #111827;
+            margin-bottom: 15px;
+        }
+
+        .contact-card p {
+            margin-bottom: 15px;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            font-size: 0.98rem;
+        }
+
+        li a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 12px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #4b5563;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav {
+                margin-top: 10px;
+            }
+
+            .contact-card {
+                padding: 25px 20px;
+                margin: 0 10px;
+            }
+
+            header h1 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Contact Developer</h1>
+        <nav>
+            <a href="/">Home</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="contact-card">
+            <h2>Hi, I'm Ajay M</h2>
+            <p>
+                I'm the developer of this AI-based ATS Resume Generator tool.
+                If you have any questions, feedback, or ideas, feel free to reach out.
+            </p>
+            <ul>
+                <li><strong>Email:</strong> Ajaymeledath11@gmail.com</li>
+                <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ajay-m-293439255/"
+                        target="_blank">ajaym</a></li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        Developed by Ajay M
+    </footer>
+
+</body>
+
+</html>

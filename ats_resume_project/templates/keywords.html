@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Extracted Keywords</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('https://images.unsplash.com/photo-1531497865144-0464ef8fbf37?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+            background-size: cover;
+            color: #1f2937;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.85);
+            z-index: 0;
+        }
+
+        header {
+            background: linear-gradient(to right, #1e293b, #0f172a);
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 2;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            margin: 0;
+        }
+
+        nav a {
+            color: #cbd5e1;
+            margin-left: 20px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #60a5fa;
+        }
+
+        main {
+            max-width: 960px;
+            margin: 60px auto;
+            padding: 40px;
+            background: white;
+            border-radius: 18px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            color: #111827;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+        }
+
+        li {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            padding: 10px 15px;
+            border-left: 4px solid #3b82f6;
+            background: #f1f5f9;
+            border-radius: 6px;
+            color: #1e293b;
+            transition: transform 0.2s ease;
+        }
+
+        li:hover {
+            transform: scale(1.02);
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #334155;
+            font-size: 0.95rem;
+            margin-top: 50px;
+            z-index: 1;
+            position: relative;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav {
+                margin-top: 10px;
+            }
+
+            main {
+                margin: 30px 15px;
+                padding: 25px;
+            }
+
+            header h1 {
+                font-size: 1.4rem;
+            }
+
+            li {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Keywords Extracted</h1>
+        <nav>
+            <a href="/">Back to Home</a>
+        </nav>
+    </header>
+    <main>
+        <h2>These are the keywords extracted from the job description:</h2>
+        <ul>
+            {% for keyword in keywords %}
+            <li>{{ keyword }}</li>
+            {% endfor %}
+        </ul>
+    </main>
+    <footer>
+        <p>Developed by Ajay M | Contact: <a href="mailto:Ajaymeledath11@gmail.com">Ajaymeledath11@gmail.com</a></p>
+    </footer>
+</body>
+
+</html>

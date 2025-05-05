@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+            padding: 40px;
+            color: #333;
+        }
+
+        h1,
+        h2 {
+            color: #2c3e50;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info span {
+            display: block;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>{{ name }}</h1>
+    <div class="contact-info">
+        <span>Email: {{ email }}</span>
+        <span>Phone: {{ phone }}</span>
+        <span>LinkedIn: {{ linkedin }}</span>
+        <span>GitHub: {{ github }}</span>
+        <span>Address: {{ address }}</span>
+    </div>
+
+    <div class="section">
+        <h2>Professional Summary</h2>
+        <p>{{ summary }}</p>
+    </div>
+
+    <div class="section">
+        <h2>Skills</h2>
+        <p>{{ skills }}</p>
+    </div>
+
+    <div class="section">
+        <h2>Work Experience</h2>
+        <p>{{ experience }}</p>
+    </div>
+
+    <div class="section">
+        <h2>Education</h2>
+        <p>{{ education }}</p>
+    </div>
+
+    <div class="section">
+        <h2>Certifications</h2>
+        <p>{{ certifications }}</p>
+    </div>
+</body>
+
+</html>
